@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function validate()
+		{
+			var rollnum=document.getElementById("roll").value;
+			var reg=/^1[5-8][gG]21[aA]0[1-5][0-9a-zA-Z][0-9]$/;
+			
+			if(reg.test(rollnum))
+			{
+				return true;
+				
+			}
+			else
+			{
+				document.getElementById("lbl").style.visibility="visible";
+				
+				document.getElementById("lbl").style.color="red";
+				return false;
+			}
+		}
+	</script> 
+</head>
+<body background="vote.jpg"><br><br><br>
+	<center id="main-wrapper"><center>
+	<form name="form1" method="post" action="switch.php" onsubmit="return validate()">
+		<table align="center" width="">
+			
+			<tr><center>
+				<td width="200" align="right"><b>Roll Number:</b><br></td>
+				<td width=""><br><input type="text" name="rollno" value="" id="roll" required>
+				<label id="lbl" style="visibility: hidden;">INVALID ROLL NUMBER</label></td></center>
+			</tr>
+			<tr><td width="200" align="right"><b>Password:</b><br></td>
+			<td><input type="password" name="pwd" value="" required><br></td>
+			<tr>
+				<td width="200" align="right"><input type="submit" name="submit" value="submit"><br></td>
+				<td width="200"><input type="reset" name="cancel" value="cancel"></td>
+			</tr>
+		
+
+		</table></center>
+	</form></center>
+	</center>
+</body>
+</html>
