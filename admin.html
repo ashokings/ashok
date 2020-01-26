@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<script type="text/javascript">
+		function validate()
+		{
+			var rollnum=document.getElementById("roll").value;
+			var reg=/^1[5-8][gG]21[aA]0[1-5][0-9a-zA-Z][0-9]$/;
+			//alert(reg.test(rollnum));
+			/*if(reg.test(rollnum))
+				return true;
+			else
+			{
+				alert("enter the co");
+				return false;
+
+			}*/
+			if(reg.test(rollnum))
+			{
+				return true;
+				
+			}
+			else
+			{
+				document.getElementById("lbl").style.visibility="visible";
+				
+				document.getElementById("lbl").style.color="red";
+				return false;
+			}
+		}
+	</script> 
+</head>
+<body bgcolor="gray">
+	<center id="main-wrapper">
+	<form name="form1" method="post" action="aut.php" onsubmit="return validate()">
+		<b style='color:blue;font-size:25pt;'>student registration form</b><center><br><br>
+		<table align="center">
+			<tr>
+				<td>
+					Student Name:      
+				</td>
+				<td>
+					<input type="text" name="sname" value="" required>
+				</td>
+			</tr>
+			<tr>
+				<td>Roll Number:<br></td>
+				<td><input type="text" name="rollno" value="" id="roll" required>
+				<label id="lbl" style="visibility: hidden;">INVALID ROLL NUMBER</label></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="Password" name="pwd" value="" required></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email" value="" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="submit"></td>
+				<td><input type="reset" name="cancel" value="cancel"></td>
+			</tr>
+		
+
+		</table></center>
+	</form>
+	</center>
+</body>
+</html>
